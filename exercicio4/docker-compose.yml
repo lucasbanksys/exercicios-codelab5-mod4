@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  ex4pg:
+    image: postgres:alpine
+    ports:
+      - '5432:5432'
+    container_name: 'ex4pg'
+    restart: always
+    volumes:
+      - ex4pg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ex4user
+      POSTGRES_PASSWORD: ex4password
+
+volumes:
+  ex4pg-data:
